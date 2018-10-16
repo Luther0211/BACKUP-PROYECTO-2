@@ -9,11 +9,11 @@ const newPostDisplay = ({onChange, handleselect, onChangeFile, newPost}) => {
 
 
   const Option = Select.Option;
-
+/*
   function handleChange(value) {
     console.log(`selected ${value}`);
   }
-
+*/
   const { TextArea } = Input;
 //
 const props = {

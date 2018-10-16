@@ -3,7 +3,6 @@ const router  = express.Router();
 //const path = require('path')
 const Post = require('../models/Post')
 const User = require('../models/User')
-const {verifyToken} =require('../helpers/jwt')
 //
 const multer = require('multer')
 const upload = multer({ dest: './public/pics/' })
@@ -12,7 +11,7 @@ const upload = multer({ dest: './public/pics/' })
 
 
 
-router.post('/', verifyToken, (req,res,next)=>{
+router.post('/', (req,res,next)=>{
     //console.log('kestapasandaa')
     Post.create(req.body)
     .then(post=>{
@@ -29,8 +28,9 @@ router.post('/', verifyToken, (req,res,next)=>{
     }).catch(e=>console.log(e))
 })
 
+//////////
 
-router.get('/posts', (req,res,next) => {
+router.get('/', (req,res,next) => {
     Post.find()
     then(posts =>{
         res.status(200).json(posts)

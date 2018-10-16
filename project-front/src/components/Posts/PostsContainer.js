@@ -1,7 +1,47 @@
 import React, {Component} from 'react'
 import PostsDisplay from './PostsDisplay'
+import axios from 'axios'
+import{getPub} from '../../services/postService'
+import Posts from './Posts'
+
 
 class PostsContainer extends Component{
+
+  state = {
+    pudData: {},
+    pubs: [],
+    loading:false,
+  }
+
+  componentWillMount(){
+    const user = JSON.parse(localStorage.getItem('user'))
+    //if(!user) return this.props.history.push('/login')
+    this.setState({user})
+
+    const url = "http://localhost:3000/"
+    return axios.get(url + "posts")
+    .then(event=> {
+      this.setState({
+        pubs: event.data.anuncios
+      })
+    })
+    .catch(error=> {
+      return error
+    })
+  }
+
+
+  getPost = () => {
+    getPub()
+    .then(pubs => {
+      this.setState({pubs})
+    })
+    .catch(e=>{
+      console.log(e)
+    })
+  }
+
+
 
 
 
@@ -11,10 +51,15 @@ class PostsContainer extends Component{
 
 
   render(){
+    console.log(this.state.pubs)
     return(
-        <PostsDisplay 
+        <div>
+          <PostsDisplay 
           
-        />
+          />
+  
+          <Posts adds={this.state.pubs}/>
+        </div>
     )
   }
 

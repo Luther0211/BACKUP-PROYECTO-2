@@ -7,15 +7,21 @@ export const createPost = (newPostData) => {
    //for(let key in newPostData){
    //    form.append(key, newPostData[key])
    //}
-   return axios.post(url + "newPost", newPostData,{
-       headers:{
-           'Authorization':localStorage.getItem('token')
-       }
-   })
+   return axios.post(url + "newPost", newPostData)
        .then(p=>{
            return p
        })
        .catch(error=>{
            return error
        })
+}
+
+export const getPub = () => {
+    return axios.get(url + "newPost")
+    .then(event=> {
+        return event
+    })
+    .catch(error=>{
+        return error
+    })
 }

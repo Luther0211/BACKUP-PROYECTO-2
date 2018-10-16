@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import Index from './components/index'
-import { NavLink, withRouter, Link } from 'react-router-dom'
+//import Index from './components/index'
+import { /*NavLink, withRouter,*/ Link } from 'react-router-dom'
 //import {Button} from 'antd'
 
 

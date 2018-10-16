@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Button } from 'antd';
+//import { Button } from 'antd';
 
 //            <img style={{borderRadius:'50%'}} src={user.photoURL} width="200" alt="user"/>
 //            <h1>{user.username}</h1>
@@ -18,20 +18,12 @@ import { Button } from 'antd';
 
 class Index extends Component{
 
-  redirectPosts = () => {
-    this.props.history.push('/posts')
-  }
+  
 
   render(){
     return(
-       <div id="indexDiv">
-        <div id="logodiv">
-        <img className="png" src="https://i.imgur.com/vxZAQpd.png" alt="png" />
-        <img className="gifCat" src="https://ezgif.com/images/loadcat.gif" alt="dancing cat" />
-        <p>
-        <Button id="adoptNow" onClick={this.redirectPosts} type="primary">Adopt Now!</Button>
-        </p>
-        </div>
+       <div>
+
        </div>
       )
   }

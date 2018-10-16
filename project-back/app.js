@@ -69,8 +69,9 @@ const newPost = require('./routes/newPost')
 app.use('/pictures', pictures)
 app.use('/users', users)
 app.use('/', auth)
-app.use('/', index);
+//app.use('/', index);
 app.use('/newPost', newPost)
+//app.use('/posts', posts )
 
 
 module.exports = app;

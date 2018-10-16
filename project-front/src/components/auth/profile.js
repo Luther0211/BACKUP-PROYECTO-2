@@ -19,17 +19,17 @@ class Profile extends Component{
         this.setState({user})
     }
 
-    getPrivateInfo = () => {
-        axios.get('http://localhost:3000/private', {
-            headers:{
-                "Authorization" : localStorage.getItem('token') 
-            }
-        })
-        .then(res=>{
-            console.log(res)
-        })
-        .catch(e=>toastr.error("algo falló", e.message))
-    }
+   // getPrivateInfo = () => {
+   //     axios.get('http://localhost:3000/private', {
+   //         headers:{
+   //             "Authorization" : localStorage.getItem('token') 
+   //         }
+   //     })
+   //     .then(res=>{
+   //         console.log(res)
+   //     })
+   //     .catch(e=>toastr.error("algo falló", e.message))
+   // }
 
 
     createPost = () => {
@@ -57,11 +57,18 @@ class Profile extends Component{
         this.props.history.push('/new_post')
     }
 
+
+    logout() {
+        localStorage.clear();
+        //location.href = '/login';
+    }
+
     render(){
         const {user} = this.state
         return(
             <div style={{paddingTop:'100px'}}>
-                <img style={{borderRadius:'50%', border:"3px solid black", cursor:"pointer"}} src='https://pre00.deviantart.net/c246/th/pre/i/2016/204/4/b/my_tumblr_profile_pic_by_huirou-dab2i4u.png' width="200" height="200" onClick={this.profilePhoto} alt="user"/>
+                <Button type="danger" block onClick={this.logout()}>Log Out</Button>
+                <img style={{borderRadius:'50%', border:"3px solid black"}} src='https://pre00.deviantart.net/c246/th/pre/i/2016/204/4/b/my_tumblr_profile_pic_by_huirou-dab2i4u.png' width="200" height="200" onClick={this.profilePhoto} alt="user"/>
                 <h1>{user.username}</h1>
                 <p>{user.email}</p>
                 <hr/>

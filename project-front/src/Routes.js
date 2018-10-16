@@ -3,11 +3,11 @@ import {Switch, Route} from 'react-router-dom'
 import SignupContainer from './components/auth/signup/signupContainer';
 import LoginContainer from './components/auth/login/loginContainer';
 import Profile from './components/auth/profile';
-import Index from './components/index'
+//import Index from './components/index'
 import newPost from './components/newPost/newPostContainer'
 import Posts from './components/Posts/PostsContainer'
-import App from './App';
-import {Link} from 'react-router-dom'
+//import App from './App';
+//import {Link} from 'react-router-dom'
 import Video from './components/video';
 
 

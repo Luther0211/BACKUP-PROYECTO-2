@@ -26,7 +26,7 @@ componentWillMount(){
 
  onChange = (e) => {
   const field = e.target.name
-  //console.log(e.target.name)
+  console.log(e.target.name)
   const value = e.target.value
   console.log(e.target.value)
   const {postData} = this.state

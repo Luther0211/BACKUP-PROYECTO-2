@@ -3,14 +3,16 @@ import React from 'react'
 
 
 
-const PostsDisplay = ({onChange, handleSelect, onChangeFile, newPost}) => {
+const PostsDisplay = () => {
+ // console.log(props.adds)
 
-
-
+//if(props.adds.length <=0) return <h1>No hay posts disponibles :c</h1>
 
   return(
-    <div>
+    <div style={{display:'flex', flexWrap:"wrap"}}>
+     
       <h1 id='hola'>HOLAAA</h1>
+
     </div>
   )
 }

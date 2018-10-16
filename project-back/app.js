@@ -65,13 +65,14 @@ const auth = require('./routes/auth')
 const users = require('./routes/users')
 const pictures = require('./routes/pictures')
 const newPost = require('./routes/newPost')
+const posts = require('./routes/posts')
 
 app.use('/pictures', pictures)
 app.use('/users', users)
 app.use('/', auth)
 //app.use('/', index);
 app.use('/newPost', newPost)
-//app.use('/posts', posts )
+app.use('/posts', posts )
 
 
 module.exports = app;

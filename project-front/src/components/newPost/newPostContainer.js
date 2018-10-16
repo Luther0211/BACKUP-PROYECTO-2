@@ -19,7 +19,7 @@ class newPostContainer extends Component{
 
 componentWillMount(){
   const user = JSON.parse(localStorage.getItem('user'))
-  if(!user) return this.props.history.push('/login')
+  //if(!user) return this.props.history.push('/login')
   this.setState({user})
 }
 
@@ -34,6 +34,8 @@ componentWillMount(){
   this.setState({postData})
 }
 
+
+
 //////////////////////////////////////////////
 
 
@@ -41,11 +43,21 @@ componentWillMount(){
 //////////////////////////////////////
 
  handleselect=(value)=>{
-  const field = 'typeEvent'
+ console.log(value)
+  const field = "animalType"
   const {postData} = this.state
   postData[field] = value
   this.setState({postData})
 }
+
+handleselect2=(value)=>{
+  console.log(value)
+   const field = "animalSize"
+   const {postData} = this.state
+   postData[field] = value
+   this.setState({postData})
+ }
+///////////////////////////////////////////////////////////////////
 
  onChangeFile = (e) => {
   const field = "imageURL"
@@ -56,7 +68,7 @@ componentWillMount(){
 }
 /*
 setCreator = () =>{
-  const field="manager"
+  const field=""
   const creator = JSON.parse(localStorage.getItem('user'))
   const {eventData} = this.state
   eventData[field] = creator._id
@@ -72,7 +84,7 @@ setCreator = () =>{
    const{postData} = this.state
    createPost(postData) //Envia los datos del formulario con axios
    .then(r=>{
-     this.props.history.push(`/profile`)////
+     this.props.history.push(`/posts`)////
      return toastr.success("Post Creado!")
    })
    .catch(e=>{
@@ -91,6 +103,7 @@ setCreator = () =>{
           onSubmit={this.newPost}
           loading={this.loading}
           handleselect={this.handleselect}
+          handleselect2={this.handleselect2}
           onChangeFile={this.onChangeFile}
         />
     )

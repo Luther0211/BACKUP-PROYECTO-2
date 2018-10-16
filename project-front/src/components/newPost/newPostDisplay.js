@@ -5,7 +5,7 @@ import {Input , Upload, message, Button, Icon, Select} from 'antd'
 
 
 /////////////////////////-v-v-traer desde newPostContainer-v-v-///////////////////////////////
-const newPostDisplay = ({onChange, handleselect, onChangeFile, newPost}) => {
+const newPostDisplay = ({handleselect2, onChange, handleselect, onChangeFile, newPost}) => {
 
 
   const Option = Select.Option;
@@ -68,7 +68,7 @@ const props = {
 
 
  <p>
-  <Select name="animalType" style={{ width: 120 }} defaultValue="Dog" onChange={onChange} >
+  <Select name="animalType" style={{ width: 120 }} defaultValue="Dog" onChange={handleselect} >
     <Option value="Dog">Dog</Option>
     <Option value="Cat">Cat</Option>
     <Option value="Bird">Bird</Option>
@@ -80,7 +80,7 @@ const props = {
 </p>
 
 <p>
-  <Select name="animalSize" style={{ width: 120 }} defaultValue="Medium" onChange={onChange} >
+  <Select name="animalSize" style={{ width: 120 }} defaultValue="Medium" onChange={handleselect2} >
     <Option value="Small">Small</Option>
     <Option value="Medium">Medium</Option>
     <Option value="Big">Big</Option>

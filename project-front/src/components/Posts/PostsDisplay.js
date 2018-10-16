@@ -11,8 +11,6 @@ const PostsDisplay = () => {
   return(
     <div style={{display:'flex', flexWrap:"wrap"}}>
      
-      <h1 id='hola'>HOLAAA</h1>
-
     </div>
   )
 }

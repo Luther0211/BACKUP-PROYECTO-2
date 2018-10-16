@@ -2,7 +2,7 @@ import {Input, Button} from 'antd'
 import React from 'react'
 
 
-const LoginDisplay = ({onChange, auth, login, loading, onSubmit}) => {
+const LoginDisplay = ({onChange, loading, onSubmit}) => {
     return(
         <form onSubmit={onSubmit} style={{width:600, margin:"0 auto", padding:"20"}}>
             <h2 style={{paddingTop:"200px"}}>Inicia sesión :-)</h2>

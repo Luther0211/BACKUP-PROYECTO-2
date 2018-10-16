@@ -13,8 +13,8 @@ export const getUserData = (id) => {
 export const uploadPic = (file) => {
     const form = new FormData();
     form.append('file', file)
-    const token = localStorage.getItem('token')
+    //const token = localStorage.getItem('token')
     return axios.post(url + 'pictures/', form)
     .then(picture=>picture)
     .catch(e=>e)
-}
+}   

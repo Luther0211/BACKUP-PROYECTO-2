@@ -18,16 +18,19 @@ class LoginContainer extends Component{
         const {auth} = this.state
         axios.post(url, auth)
         .then(res=>{
-            console.log(res)
-            toastr.success("Te logueate!")
-            localStorage.setItem('user', JSON.stringify(res.data.user))
-            localStorage.setItem('token', res.data.token)
+            let token = res.data.token
+            let user = res.data.user
+            console.log(user,token)
+            toastr.success("Login Exitoso!")
+            localStorage.setItem('user', JSON.stringify(user))
+            localStorage.setItem('token', token)
             this.setState({loading:false})
             const bonito = this.props.history
             bonito.push('/profile')
 
         })
         .catch(e=>{
+            console.log(e)
             toastr.error("no quiero tu cochinada")
             this.setState({loading:false})
             

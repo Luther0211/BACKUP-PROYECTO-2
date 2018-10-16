@@ -8,7 +8,7 @@ import Posts from './Posts'
 class PostsContainer extends Component{
 
   state = {
-    pudData: {},
+    pubData: {},
     pubs: [],
     loading:false,
   }
@@ -21,6 +21,7 @@ class PostsContainer extends Component{
     const url = "http://localhost:3000/"
     return axios.get(url + "posts")
     .then(event=> {
+      console.log(event)
       this.setState({
         pubs: event.data.anuncios
       })
@@ -51,12 +52,12 @@ class PostsContainer extends Component{
 
 
   render(){
-    console.log(this.state.pubs)
+    console.log(this.state)
     return(
         <div>
-          <PostsDisplay 
+          {/*<PostsDisplay 
           
-          />
+          />*/}
   
           <Posts adds={this.state.pubs}/>
         </div>

@@ -1,20 +1,58 @@
-import React from 'react'
-
-const Posts = (props) => {
-  console.log(props.adds)
-  if(props.adds.length <=0) return <h1>No hay posts disponibles :c</h1>
-
-  return(
-    <div style={{display:'flex', flexWrap:"wrap"}}>
-      {props.adds.map((p,i) => (
-        <p key={i}> {p.name} <br/>
-        {p.text}</p>
-      ))}
-      <h1 id='hola'>HOLAAA</h1>
+import React, {Component} from 'react'
+import axios from 'axios'
+import Cards from './Card'
 
 
-    </div>
-  )
+
+
+class Posts extends Component {
+
+  state = {
+    data: []
+  }
+  
+  componentDidMount() {
+    const url = "http://localhost:3000/posts";
+
+    axios.get(url)
+      .then(res => {
+        const data =this.state.data
+        
+        res.data.data.forEach( e => {
+          data.push(e)
+        })
+
+        this.setState({
+          data
+        })
+      }).catch(err => console.log(err))
+
+  }
+
+  /*<h1>Posts</h1>
+          <div>
+            <h2>titulo</h2>
+          </div>
+          <div>
+            <p>Direccion</p>
+          </div>*/
+  
+  render() {
+    
+    return(
+        <div>
+          {this.state.data.map((e,i)=>(
+            <Cards
+            key={i}
+            data={this.state.data[i]}
+            />
+          ))}
+          
+        </div>
+      )
+  }
+
+
 }
 
 

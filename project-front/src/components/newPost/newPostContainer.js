@@ -82,7 +82,7 @@ setCreator = () =>{
  newPost = (e) => {
    //this.setCreator()
    this.setState({loading:true})
-   //e.preventDefault()
+   e.preventDefault()
    const{postData} = this.state
    createPost(postData) //Envia los datos del formulario con axios
    .then(r=>{

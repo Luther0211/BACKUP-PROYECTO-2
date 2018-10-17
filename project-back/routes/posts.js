@@ -4,8 +4,8 @@ const router  = express.Router();
 const Post = require('../models/Post')
 const User = require('../models/User')
 //
-const multer = require('multer')
-const upload = multer({ dest: './public/pics/' })
+//const multer = require('multer')
+//const upload = multer({ dest: './public/pics/' })
 
 
 

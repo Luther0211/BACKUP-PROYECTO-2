@@ -5,7 +5,7 @@ const Post = require('../models/Post')
 const User = require('../models/User')
 //
 const multer = require('multer')
-const upload = multer({ dest: './public/pics/' })
+//const upload = multer({ dest: './public/pics/' })
 const uploadCloud = require('../helpers/cloudinary')
 
 

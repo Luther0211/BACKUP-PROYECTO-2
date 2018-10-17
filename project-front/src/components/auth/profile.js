@@ -15,6 +15,7 @@ class Profile extends Component{
 
     componentWillMount(){
         const user = JSON.parse(localStorage.getItem('user'))
+        
         if(!user) return this.props.history.push('/login')
         this.setState({user})
     }
@@ -58,16 +59,18 @@ class Profile extends Component{
     }
 
 
-    logout() {
+    logout=() =>{
         localStorage.clear();
         //location.href = '/login';
+        this.props.history.push('/login')
     }
 
     render(){
         const {user} = this.state
+        console.log(this.props)
         return(
             <div style={{paddingTop:'100px'}}>
-                <Button type="danger" block onClick={this.logout()}>Log Out</Button>
+                <Button type="danger" block onClick={this.logout}>Log Out</Button>
                 <img style={{borderRadius:'50%', border:"3px solid black"}} src='https://pre00.deviantart.net/c246/th/pre/i/2016/204/4/b/my_tumblr_profile_pic_by_huirou-dab2i4u.png' width="200" height="200" onClick={this.profilePhoto} alt="user"/>
                 <h1>{user.username}</h1>
                 <p>{user.email}</p>

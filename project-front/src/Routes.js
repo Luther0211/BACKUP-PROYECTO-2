@@ -9,6 +9,7 @@ import Posts from './components/Posts/PostsContainer'
 //import App from './App';
 //import {Link} from 'react-router-dom'
 import Video from './components/video';
+import Contact from './components/Contact';
 
 
 const Routes = () => {
@@ -21,6 +22,7 @@ const Routes = () => {
             <Route path="/profile" component={Profile} />
             <Route path="/new_post" component={newPost} />
             <Route path="/posts" component={Posts} />
+            <Route path="/contact" component={Contact} />
         </Switch>
     )
 }

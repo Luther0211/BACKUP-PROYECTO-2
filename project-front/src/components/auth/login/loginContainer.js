@@ -11,8 +11,12 @@ class LoginContainer extends Component{
         auth:{},
         loading:false
     }
+    componentWillMount(){
+       
+    }
 
     login = (e) => {
+        localStorage.setItem('token', 'perrinho')
         this.setState({loading:true})
         e.preventDefault()
         const {auth} = this.state
@@ -23,10 +27,10 @@ class LoginContainer extends Component{
             console.log(user,token)
             toastr.success("Login Exitoso!")
             localStorage.setItem('user', JSON.stringify(user))
-            localStorage.setItem('token', token)
+            localStorage.setItem('token', JSON.stringify(token))
             this.setState({loading:false})
             const bonito = this.props.history
-            bonito.push('/profile')
+           bonito.push('/profile')
 
         })
         .catch(e=>{

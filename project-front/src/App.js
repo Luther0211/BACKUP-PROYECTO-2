@@ -17,6 +17,15 @@ class App extends Component {
   }
 */
 
+/*
+<li>
+                <Link to="/gallery" onClick={this.onClickLink}>
+                  <svg className="video-player">
+                    <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#video-player" />
+                  </svg><span>Gallery</span></Link>
+              </li>
+*/
+
   
   logOut = () => {
     localStorage.removeItem('user')
@@ -85,12 +94,7 @@ class App extends Component {
                     <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#speech-bubble" />
                   </svg><span>Posts</span></Link>
               </li>
-              <li>
-                <Link to="/gallery" onClick={this.onClickLink}>
-                  <svg className="video-player">
-                    <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#video-player" />
-                  </svg><span>Gallery</span></Link>
-              </li>
+              
               <li>
                 <Link to="/contact" onClick={this.onClickLink}>
                   <svg className="paper-airplane">

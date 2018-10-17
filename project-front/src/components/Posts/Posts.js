@@ -40,9 +40,10 @@ class Posts extends Component {
   render() {
     
     return(
-        <div>
+        <div className="postList">
           {this.state.data.map((e,i)=>(
             <Cards
+            className="cardPosted"
             key={i}
             data={this.state.data[i]}
             />

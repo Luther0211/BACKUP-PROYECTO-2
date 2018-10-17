@@ -58,6 +58,7 @@ class PostsContainer extends Component{
           {/*<PostsDisplay 
           
           />*/}
+          <h1>Animales en busca de hogar</h1>
   
           <Posts adds={this.state.pubs}/>
         </div>

@@ -403,4 +403,18 @@ body{
   height: 350px;
   margin-left:37%;
   padding-top: 3.5%;
+  border-radius: 3%
+
+}
+
+/*-----------POST LIST-----------*/
+
+.postList{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.cardPosted{
+  max-height: 200px;
 }

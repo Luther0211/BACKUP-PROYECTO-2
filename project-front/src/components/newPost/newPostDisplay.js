@@ -1,5 +1,5 @@
 import React from 'react'
-import {Input , Upload, Button, Icon, Select} from 'antd'
+import {Input , Upload, Button, Icon, Select, message} from 'antd'
 
 
 
@@ -15,10 +15,9 @@ const newPostDisplay = ({handleselect2, onChange, handleselect, onChangeFile, ne
   }
 */
   const { TextArea } = Input;
-/*
+
 const props = {
   name: 'file',
-  action: '//jsonplaceholder.typicode.com/posts/',
   headers: {
     authorization: 'authorization-text',
   },
@@ -33,7 +32,7 @@ const props = {
     }
   },
 };
-*/
+
 
   return(
 <div>
@@ -53,7 +52,7 @@ const props = {
 
   
 <p>
-  <Upload  onChange={onChangeFile}>
+  <Upload {...props}  onChange={onChangeFile}>
       <Button>
         <Icon type="upload" /> Upload Image
       </Button>

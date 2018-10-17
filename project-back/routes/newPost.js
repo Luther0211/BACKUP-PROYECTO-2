@@ -6,25 +6,28 @@ const User = require('../models/User')
 //
 const multer = require('multer')
 const upload = multer({ dest: './public/pics/' })
-//uploadcloud
+const uploadCloud = require('../helpers/cloudinary')
 
 
 
 
-router.post('/', (req,res,next)=>{
-    //console.log('kestapasandaa')
+router.post('/', uploadCloud.single('image'),(req,res,next)=>{
+    //*****//
+    console.log(req.body)
+    if(req.file)req.body.imageURL = req.file.url
     Post.create(req.body)
-    .then(post=>{
-        User.findByIdAndUpdate(req.user._id, {
-        $push: {post: post._id}
-        
-    }).then( p =>{
-            console.log(p)
-            res.status(200).json(p)
-        }).catch(e=>{
-            console.log(e)
-            res.json(e)
-        })
+        .then(post=>{
+            console.log(post)
+            User.findByIdAndUpdate("5bc6940642150c3b629b2ec3",{
+            $push: {post: post._id}
+            
+        }).then( p =>{
+                console.log(p)
+                res.status(200).json(p)
+            }).catch(e=>{
+                console.log(e)
+                res.json(e)
+            })
     }).catch(e=>console.log(e))
 })
 

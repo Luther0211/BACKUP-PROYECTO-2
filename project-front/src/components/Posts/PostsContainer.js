@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import PostsDisplay from './PostsDisplay'
+//import PostsDisplay from './PostsDisplay'
 import axios from 'axios'
 import{getPub} from '../../services/postService'
 import Posts from './Posts'

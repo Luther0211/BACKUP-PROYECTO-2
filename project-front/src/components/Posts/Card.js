@@ -39,28 +39,29 @@ class Cards extends Component {
     console.log(this.props.data)
     return(
         <div>
-          <div class="cardDiv">
+          <div className="cardDiv">
           <Card
               onClick={this.showModal}
               hoverable
               style={{ width: 300, marginLeft:200, marginTop: 100 }}
-              cover={this.props.data.pictures}
+              cover= {<img alt="img" src={this.props.data.imageURL}></img>}//{this.props.data.imageURL}
               /*{<img alt="example" src="https://i.imgur.com/lDNOf2n.png" />}*/
            >
               <Meta
                 title={this.props.data.title}
-                description={this.props.data.address}
               />
+              <strong>Address: </strong>{this.props.data.address}
+
            </Card>
 
            <Modal
-          title="Basic Modal"
+          title={this.props.data.title}
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
-          <h2>{this.props.data.title}</h2>
           <hr/>
+          <p><img alt="img" src={this.props.data.imageURL}style={{width:"95%"}}></img></p>
           <p>{this.props.data.description}</p>
           <p><strong>Animal Type:</strong> {this.props.data.animalType}</p>
           <p><strong>Animal Size:</strong> {this.props.data.animalSize}</p>

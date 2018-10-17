@@ -3,12 +3,7 @@ const Schema = mongoose.Schema
 
 const postSchema = new Schema({
     title: String,
-    pictures:[
-      {
-          type: Schema.Types.ObjectId,
-          ref: "Picture"
-      }
-    ],
+    imageURL:String,
     description:String,
     animalType:{
       type:String,

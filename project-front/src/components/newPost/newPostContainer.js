@@ -3,7 +3,7 @@ import toastr from 'toastr'
 //import axios from 'axios'
 import NewPostDisplay from './newPostDisplay'
 import {createPost} from '../../services/postService'
-import {uploadPic} from '../../services/userService'
+//import {uploadPic} from '../../services/userService'
 
 
 
@@ -32,6 +32,7 @@ componentWillMount(){
   const {postData} = this.state
   postData[field] = value
   this.setState({postData})
+  console.log(postData)
 }
 
 
@@ -60,10 +61,11 @@ handleselect2=(value)=>{
 ///////////////////////////////////////////////////////////////////
 
  onChangeFile = (e) => {
-  const field = "imageURL"
+   console.log(e)
+  const field = "image"
   const {postData} = this.state
-  postData[field] = e.target.files[0]
-  uploadPic(e.target.files[0])
+  postData[field] = e.file.originFileObj
+  //uploadPic(e.target.files[0])
   this.setState({postData})
 }
 /*

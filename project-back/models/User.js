@@ -9,12 +9,6 @@ const userSchema = new Schema({
     },
     email: String,
     photoURL: String,
-    pictures:[
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Picture"
-        }
-    ],
     post:[{
         type: Schema.Types.ObjectId,
         ref: "Post" 
